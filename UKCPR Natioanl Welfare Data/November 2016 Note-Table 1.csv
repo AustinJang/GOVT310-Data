@@ -1,0 +1,51 @@
+"Values for state Medicaid beneficiaries (Column BK) were missing for some states in some years due to missing data in the Medicaid report.  Data was gathered to fill these missing values.  The data were gathered from the following:
+     CA 2014 http://www.dhcs.ca.gov/dataandstats/reports/Documents/MMCD_Enrollment_Reports/MMCDEnrollRptJune2014.pdf
+     CA 2015 http://www.dhcs.ca.gov/dataandstats/reports/Documents/MMCD_Enrollment_Reports/MMCEnrollRptJune2015.pdf
+     CO 2014 https://www.colorado.gov/pacific/sites/default/files/Medicaid%20Member%20Caseload%20Monthly%20Report%20June%202014%20by%20Age%20Group.pdf
+     CO 2015 https://www.colorado.gov/pacific/sites/default/files/Medicaid%20Member%20Caseload%20by%20County%20-%20By%20Age%20Groups%20June%202015.pdf
+     NJ 2015 http://www.state.nj.us/humanservices/dmahs/news/reports/enrollment_2015.pdf
+     ND 2014 https://www.medicaid.gov/medicaid/program-information/downloads/updated-july-enrollment-data.pdf
+     ND 2015 https://www.medicaid.gov/medicaid/program-information/downloads/updated-july-2015-enrollment-data.pdf
+
+Population, employment, unemployment, unemployment rate, and personal income have all been updated going back to 1980 in light of updates made by the Census and BLS.
+
+EITC parameters for 3 or more dependents have been added.
+
+Low income uninsured children and its respective percent have been changed from a 3 year moving average to single-year observations.
+
+
+
+
+",,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,

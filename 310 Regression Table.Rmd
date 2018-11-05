@@ -1,0 +1,51 @@
+---
+title: "STuff"
+author: "Austin Jang"
+date: "4/20/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+Eviction.aid <- read.csv("https://raw.githubusercontent.com/AustinJang/GOVT310-Data/master/finalproject.csv")
+Eviction.aid$CLA <- Eviction.aid$Number.of.Civil.Legal.Aid.Attorneys.Per.10.000.People.In.Poverty
+Eviction.aid$tenant.success <- 1-(Eviction.aid$eviction.rate/Eviction.aid$eviction.filing.rate)
+
+Eviction.aid$l.renter.occupied.households <- log(Eviction.aid$renter.occupied.households)
+Eviction.aid$CLA.rate <- Eviction.aid$Civil.Legal.Aid/Eviction.aid$renter.occupied.households*100
+Eviction.aid$eviction.rate.2 <- Eviction.aid$eviction.rate/100
+
+summary(Eviction.aid$renter.occupied.households)
+
+Eviction.aid2 <- subset(Eviction.aid, eviction.filing.rate < 48)
+
+lm.1 <- lm(eviction.rate~log(CLA) + pct.af.am + poverty.rate, data= Eviction.aid2 )
+lm.2 <- lm(eviction.rate~log(CLA) + pct.af.am + pct.renter.occupied, data= Eviction.aid2)
+lm.3 <- lm(eviction.rate~log(CLA) + pct.af.am + I(median.household.income/1000), data= Eviction.aid2)
+lm.4 <- lm(eviction.filing.rate~log(CLA) + pct.af.am + poverty.rate, data= Eviction.aid2 )
+lm.5 <- lm(eviction.filing.rate~log(CLA) + pct.af.am + pct.renter.occupied, data= Eviction.aid2)
+lm.6 <- lm(eviction.filing.rate~log(CLA) + pct.af.am + I(median.household.income/1000), data= Eviction.aid)
+
+summary(Eviction.aid$eviction.rate, na.rm = TRUE)
+
+```
+
+```{r, results='asis'}
+library(stargazer)
+stargazer(lm.1, lm.2, lm.3, lm.4, lm.5, lm.6,
+          title = "Civil Legal Aid and Eviction Regression",
+          type = 'html',
+          align = TRUE
+          #dep.var.labels = "Probability of Union Protest",
+          #column.labels = c("Simple State Models", "Simple Society Models", "State Society Models"),
+          #column.separate = c(4,3,2),
+          #covariate.labels = c("Violence Level", "Tax Capacity", "Violence*Tax", "Union Structure", "Protest History (binary)" , "% Urban", "Polity", "Polity Squared", "Log(GDP)", "Log(Population)", "Protest t-1"),
+          #order = c(1,2,11,3,4,5,6,7,8,9,10,11)
+          )
+
+
+```
